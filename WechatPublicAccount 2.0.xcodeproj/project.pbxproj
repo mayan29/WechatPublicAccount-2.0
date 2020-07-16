@@ -20,6 +20,7 @@
 		BC68C6F324BFE1C1008927CD /* AccountListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC68C6EF24BFE1C1008927CD /* AccountListCell.m */; };
 		BC68C6F424BFE1C1008927CD /* AccountListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC68C6F024BFE1C1008927CD /* AccountListViewController.m */; };
 		BC68C6FD24BFE3A1008927CD /* GeneralMsgListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC68C6FB24BFE3A1008927CD /* GeneralMsgListViewController.m */; };
+		BC68C70024BFE860008927CD /* GeneralMsgListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC68C6FF24BFE860008927CD /* GeneralMsgListViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,8 @@
 		BC68C6F924BFE36C008927CD /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		BC68C6FB24BFE3A1008927CD /* GeneralMsgListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralMsgListViewController.m; sourceTree = "<group>"; };
 		BC68C6FC24BFE3A1008927CD /* GeneralMsgListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralMsgListViewController.h; sourceTree = "<group>"; };
+		BC68C6FE24BFE860008927CD /* GeneralMsgListViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneralMsgListViewCell.h; sourceTree = "<group>"; };
+		BC68C6FF24BFE860008927CD /* GeneralMsgListViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneralMsgListViewCell.m; sourceTree = "<group>"; };
 		BF1B4EF4DC7F32697187A6D4 /* Pods-WechatPublicAccount 2.0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WechatPublicAccount 2.0.debug.xcconfig"; path = "Target Support Files/Pods-WechatPublicAccount 2.0/Pods-WechatPublicAccount 2.0.debug.xcconfig"; sourceTree = "<group>"; };
 		EA689E6AF827DD99ACC54537 /* Pods-WechatPublicAccount 2.0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WechatPublicAccount 2.0.release.xcconfig"; path = "Target Support Files/Pods-WechatPublicAccount 2.0/Pods-WechatPublicAccount 2.0.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,8 +134,10 @@
 		BC68C6FA24BFE3A1008927CD /* GeneralMsgListViewController */ = {
 			isa = PBXGroup;
 			children = (
-				BC68C6FB24BFE3A1008927CD /* GeneralMsgListViewController.m */,
+				BC68C6FE24BFE860008927CD /* GeneralMsgListViewCell.h */,
+				BC68C6FF24BFE860008927CD /* GeneralMsgListViewCell.m */,
 				BC68C6FC24BFE3A1008927CD /* GeneralMsgListViewController.h */,
+				BC68C6FB24BFE3A1008927CD /* GeneralMsgListViewController.m */,
 			);
 			path = GeneralMsgListViewController;
 			sourceTree = "<group>";
@@ -247,6 +252,7 @@
 				BC68C6F224BFE1C1008927CD /* Account.m in Sources */,
 				BC68C6FD24BFE3A1008927CD /* GeneralMsgListViewController.m in Sources */,
 				BC68C6F324BFE1C1008927CD /* AccountListCell.m in Sources */,
+				BC68C70024BFE860008927CD /* GeneralMsgListViewCell.m in Sources */,
 				BC68C6CD24BFDCA9008927CD /* AppDelegate.m in Sources */,
 				BC68C6F424BFE1C1008927CD /* AccountListViewController.m in Sources */,
 				BC68C6DE24BFDCAD008927CD /* main.m in Sources */,

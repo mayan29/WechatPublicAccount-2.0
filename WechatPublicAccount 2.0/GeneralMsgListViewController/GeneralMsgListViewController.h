@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface GeneralMsgListViewController : UITableViewController
 
+@property (nonatomic, copy) NSString *accountId;
+@property (nonatomic, copy) NSString *accountNickName;
+
 @end
 
 NS_ASSUME_NONNULL_END

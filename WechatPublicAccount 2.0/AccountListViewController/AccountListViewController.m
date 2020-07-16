@@ -44,7 +44,8 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     GeneralMsgListViewController *vc = [[GeneralMsgListViewController alloc] init];
-//    vc.account = self.accountArray[indexPath.row];
+    vc.accountId = self.accountArray[indexPath.row].id;
+    vc.accountNickName = self.accountArray[indexPath.row].nick_name;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
