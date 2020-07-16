@@ -8,6 +8,7 @@
 
 #import "GeneralMsgListViewController.h"
 #import "GeneralMsgListViewCell.h"
+#import "CoreDataManager.h"
 
 @interface GeneralMsgListViewController ()
 
@@ -49,6 +50,7 @@
 //        [self.tableView.refreshControl endRefreshing];
 //        [self.tableView reloadData];
 //    }];
+    FMDBManager *manager = [FMDBManager shareInstance];
 }
 
 

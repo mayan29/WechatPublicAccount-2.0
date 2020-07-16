@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AppMsg" representedClassName="AppMsg" syncable="YES" codeGenerationType="class">
+        <attribute name="author" optional="YES" attributeType="String"/>
+        <attribute name="content_url" optional="YES" attributeType="String"/>
+        <attribute name="cover" optional="YES" attributeType="String"/>
+        <attribute name="digest" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="general_msg" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GeneralMsg"/>
+    </entity>
+    <entity name="GeneralMsg" representedClassName="GeneralMsg" syncable="YES" codeGenerationType="class">
+        <attribute name="datetime" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="wx_id" optional="YES" attributeType="String"/>
+        <relationship name="app_msg_list" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AppMsg"/>
+    </entity>
+    <elements>
+        <element name="GeneralMsg" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="AppMsg" positionX="-54" positionY="18" width="128" height="133"/>
+    </elements>
+</model>

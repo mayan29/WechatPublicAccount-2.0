@@ -5,8 +5,8 @@ inhibit_all_warnings!
 target 'WechatPublicAccount 2.0' do
 pod 'SDWebImage', '~> 5.0'
 pod 'YYCategories'
+pod 'MagicalRecord'
 pod 'MJExtension'
-pod 'FMDB'
 
 end
 
