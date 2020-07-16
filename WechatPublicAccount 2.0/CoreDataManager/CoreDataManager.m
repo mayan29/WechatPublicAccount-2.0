@@ -72,5 +72,15 @@
     return [GeneralMsg MR_findAllSortedBy:@"datetime" ascending:YES withPredicate:predicate];
 }
 
+- (void)deleteGeneralMsg:(GeneralMsg *)generalMsg completed:(void (^)(void))completedBlock {
+    [[NSManagedObjectContext MR_defaultContext] MR_saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
+       [generalMsg MR_deleteEntityInContext:localContext];
+    } completion:^(BOOL contextDidSave, NSError * _Nullable error) {
+        if (completedBlock) {
+            completedBlock();
+        }
+    }];
+}
+
 
 @end

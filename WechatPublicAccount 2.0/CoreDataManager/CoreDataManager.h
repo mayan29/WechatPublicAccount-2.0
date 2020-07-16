@@ -22,6 +22,7 @@ typedef void (^CoreDataManagerSaveCompletionHandler)(BOOL contextDidSave, NSErro
 
 - (void)updateGeneralMsgsWithMetadataArray:(NSArray *)metadataArray accountId:(NSString *)accountId completed:(CoreDataManagerSaveCompletionHandler)completedBlock;
 - (NSArray<GeneralMsg *> *)generalMsgsWithAccountId:(NSString *)accountId;
+- (void)deleteGeneralMsg:(GeneralMsg *)generalMsg completed:(void (^)(void))completedBlock;
 
 @end
 

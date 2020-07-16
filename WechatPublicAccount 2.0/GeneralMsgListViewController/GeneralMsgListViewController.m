@@ -67,6 +67,36 @@
     return self.appMsgListMap[generalMsg.id];
 }
 
+- (void)copyGeneraMsgWithIndexPath:(NSIndexPath *)indexPath {
+    GeneralMsg *generalMsg = self.generalMsgArray[indexPath.section];
+    
+    NSMutableString *string = [NSMutableString string];
+    for (AppMsg *appMsg in generalMsg.app_msg_list) {
+        if (appMsg.title) [string appendFormat:@"title: %@\n", appMsg.title];
+        if (appMsg.digest) [string appendFormat:@"digest: %@\n", appMsg.digest];
+        if (appMsg.author) [string appendFormat:@"author: %@\n", appMsg.author];
+        if (appMsg.cover) [string appendFormat:@"cover: %@\n", appMsg.cover];
+        if (appMsg.content_url) [string appendFormat:@"content_url: %@\n", appMsg.content_url];
+        [string appendFormat:@"\n\n\n"];
+    }
+    
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    pasteboard.string = string;
+}
+
+- (void)deleteGeneraMsgWithIndexPath:(NSIndexPath *)indexPath {
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:nil message:@"是否删除？" preferredStyle:UIAlertControllerStyleAlert];
+    [alertVC addAction:[UIAlertAction actionWithTitle:@"否" style:UIAlertActionStyleCancel handler:nil]];
+    [alertVC addAction:[UIAlertAction actionWithTitle:@"是" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        GeneralMsg *generalMsg = self.generalMsgArray[indexPath.section];
+        [[GeneralMsgListManager shareInstance] deleteGeneralMsg:generalMsg completed:^{
+            [self.generalMsgArray removeObject:generalMsg];
+            [self.tableView deleteSection:indexPath.section withRowAnimation:UITableViewRowAnimationAutomatic];
+        }];
+    }]];
+    [self presentViewController:alertVC animated:YES completion:nil];
+}
+
 
 #pragma mark - UITableViewDelegate and UITableViewDataSource
 
@@ -95,10 +125,10 @@
     
     UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     [alertVC addAction:[UIAlertAction actionWithTitle:@"复制" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        NSLog(@"复制");
+        [self copyGeneraMsgWithIndexPath:indexPath];
     }]];
     [alertVC addAction:[UIAlertAction actionWithTitle:@"删除" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        NSLog(@"删除");
+        [self deleteGeneraMsgWithIndexPath:indexPath];
     }]];
     [alertVC addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
     [self presentViewController:alertVC animated:YES completion:nil];

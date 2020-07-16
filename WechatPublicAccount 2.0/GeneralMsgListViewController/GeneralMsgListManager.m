@@ -42,5 +42,13 @@
     }
 }
 
+- (void)deleteGeneralMsg:(GeneralMsg *)generalMsg completed:(void (^)(void))completedBlock {
+    [[CoreDataManager shareInstance] deleteGeneralMsg:generalMsg completed:^{
+        if (completedBlock) {
+            completedBlock();
+        }
+    }];
+}
+
 
 @end
