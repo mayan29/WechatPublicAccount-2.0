@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
     <entity name="AppMsg" representedClassName="AppMsg" syncable="YES" codeGenerationType="class">
         <attribute name="author" optional="YES" attributeType="String"/>
         <attribute name="content_url" optional="YES" attributeType="String"/>
@@ -9,13 +9,13 @@
         <relationship name="general_msg" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GeneralMsg" inverseName="app_msg_list" inverseEntity="GeneralMsg"/>
     </entity>
     <entity name="GeneralMsg" representedClassName="GeneralMsg" syncable="YES" codeGenerationType="class">
-        <attribute name="datetime" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="datetime" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="wx_id" optional="YES" attributeType="String"/>
         <relationship name="app_msg_list" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AppMsg" inverseName="general_msg" inverseEntity="AppMsg"/>
     </entity>
     <elements>
-        <element name="GeneralMsg" positionX="-63" positionY="-18" width="128" height="103"/>
         <element name="AppMsg" positionX="-54" positionY="18" width="128" height="133"/>
+        <element name="GeneralMsg" positionX="-63" positionY="-18" width="128" height="103"/>
     </elements>
 </model>

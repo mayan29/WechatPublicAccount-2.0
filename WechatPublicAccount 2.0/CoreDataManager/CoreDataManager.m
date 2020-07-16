@@ -9,6 +9,8 @@
 
 #import "CoreDataManager.h"
 #import <MagicalRecord/MagicalRecord.h>
+#import "GeneralMsg+CoreDataClass.h"
+#import "AppMsg+CoreDataClass.h"
 
 @implementation CoreDataManager
 
@@ -32,6 +34,42 @@
 
 - (void)cleanUp {
     [MagicalRecord cleanUp];
+}
+
+
+#pragma mark - Public Methods
+
+- (void)updateGeneralMsgsWithMetadataArray:(NSArray *)metadataArray accountId:(NSString *)accountId completed:(CoreDataManagerSaveCompletionHandler)completedBlock {
+    [[NSManagedObjectContext MR_defaultContext] MR_saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
+        for (NSDictionary *metadata in metadataArray) {
+            if (![GeneralMsg MR_findFirstByAttribute:@"id" withValue:metadata[@"id"]]) {
+                
+                GeneralMsg *generalMsg = [GeneralMsg MR_createEntityInContext:localContext];
+                generalMsg.id       = [NSString stringWithFormat:@"%@", metadata[@"id"]];
+                generalMsg.datetime = [NSString stringWithFormat:@"%@", metadata[@"datetime"]];
+                generalMsg.wx_id    = accountId;
+                
+                for (NSDictionary *msg in metadata[@"msglist"]) {
+                    AppMsg *appMsg = [AppMsg MR_createEntityInContext:localContext];
+                    appMsg.author      = msg[@"author"];
+                    appMsg.content_url = msg[@"content_url"];
+                    appMsg.cover       = msg[@"cover"];
+                    appMsg.digest      = msg[@"digest"];
+                    appMsg.title       = msg[@"title"];
+                    [generalMsg addApp_msg_listObject:appMsg];
+                }
+            }
+        }
+    } completion:^(BOOL contextDidSave, NSError * _Nullable error) {
+        if (completedBlock) {
+            completedBlock(contextDidSave, error);
+        }
+    }];
+}
+
+- (NSArray<GeneralMsg *> *)generalMsgsWithAccountId:(NSString *)accountId {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"wx_id = %@", accountId];
+    return [GeneralMsg MR_findAllSortedBy:@"datetime" ascending:YES withPredicate:predicate];
 }
 
 

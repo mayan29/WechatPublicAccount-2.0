@@ -7,10 +7,14 @@
 //
 
 #import "GeneralMsgListViewController.h"
-#import "GeneralMsgListViewCell.h"
-#import "CoreDataManager.h"
+#import "GeneralMsgListHeaderView.h"
+#import "GeneralMsgListCell.h"
+#import "GeneralMsgListManager.h"
 
 @interface GeneralMsgListViewController ()
+
+@property (nonatomic, strong) NSMutableArray<GeneralMsg *> *generalMsgArray;
+@property (nonatomic, strong) NSMutableDictionary<NSString *, NSArray<AppMsg *> *> *appMsgListMap;
 
 @end
 
@@ -24,10 +28,13 @@
     self.tableView.tableFooterView = [UIView new];
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 150.f;
+    self.tableView.sectionHeaderHeight = 40.f;
 
     self.tableView.refreshControl = [[UIRefreshControl alloc] init];
     self.tableView.refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新"];
     [self.tableView.refreshControl addTarget:self action:@selector(refreshAction) forControlEvents:UIControlEventValueChanged];
+    
+    [self fetchGeneralMsgArrayWithIsFromNetwork:NO];
 }
 
 
@@ -45,23 +52,66 @@
 }
 
 - (void)fetchGeneralMsgArrayWithIsFromNetwork:(BOOL)isFromNetwork {
-//    [[GeneralMsgListManager shareInstance] fetchGeneralMsgListWithId:self.account.id isFromNetwork:isFromNetwork completed:^(NSArray<GeneralMsg *> * _Nonnull generalMsgs, NSError * _Nonnull error) {
-//        self.generalMsgArray = generalMsgs.mutableCopy;
-//        [self.tableView.refreshControl endRefreshing];
-//        [self.tableView reloadData];
-//    }];
-    FMDBManager *manager = [FMDBManager shareInstance];
+    [[GeneralMsgListManager shareInstance] fetchGeneralMsgListWithId:self.accountId isFromNetwork:isFromNetwork completed:^(NSArray<GeneralMsg *> * _Nonnull generalMsgs, NSError * _Nullable error) {
+        self.generalMsgArray = generalMsgs.mutableCopy;
+        [self.tableView.refreshControl endRefreshing];
+        [self.tableView reloadData];
+    }];
+}
+
+- (NSArray<AppMsg *> *)appMsgArrayWithGeneralMsg:(GeneralMsg *)generalMsg {
+    if (!self.appMsgListMap[generalMsg.id]) {
+        NSSortDescriptor *sd = [[NSSortDescriptor alloc] initWithKey:@"content_url" ascending:YES];
+        self.appMsgListMap[generalMsg.id] = [generalMsg.app_msg_list.allObjects sortedArrayUsingDescriptors:@[sd]];
+    }
+    return self.appMsgListMap[generalMsg.id];
 }
 
 
-#pragma mark - Table view data source
+#pragma mark - UITableViewDelegate and UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 0;
+    return self.generalMsgArray.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return self.generalMsgArray[section].app_msg_list.count;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    GeneralMsg *generalMsg = self.generalMsgArray[section];
+    return [GeneralMsgListHeaderView headerViewWithTableView:tableView datetime:generalMsg.datetime];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    GeneralMsg *generalMsg = self.generalMsgArray[indexPath.section];
+    AppMsg *appMsg = [self appMsgArrayWithGeneralMsg:generalMsg][indexPath.row];
+    GeneralMsgListCell *cell = [GeneralMsgListCell cellWithTableView:tableView appMsg:appMsg];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    [alertVC addAction:[UIAlertAction actionWithTitle:@"复制" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"复制");
+    }]];
+    [alertVC addAction:[UIAlertAction actionWithTitle:@"删除" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"删除");
+    }]];
+    [alertVC addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+    [self presentViewController:alertVC animated:YES completion:nil];
+}
+
+
+#pragma mark - Lazy Load
+
+- (NSMutableDictionary<NSString *,NSArray<AppMsg *> *> *)appMsgListMap {
+    if (!_appMsgListMap) {
+        _appMsgListMap = [NSMutableDictionary dictionary];
+    }
+    return _appMsgListMap;
 }
 
 

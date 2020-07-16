@@ -1,5 +1,5 @@
 //
-//  GeneralMsgListViewCell.h
+//  GeneralMsgListHeaderView.h
 //  WechatPublicAccount 2.0
 //
 //  Created by mayan on 2020/7/16.
@@ -10,7 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface GeneralMsgListViewCell : UITableViewCell
+@interface GeneralMsgListHeaderView : UITableViewHeaderFooterView
+
++ (instancetype)headerViewWithTableView:(UITableView *)tableView datetime:(NSString *)datetime;
+
 
 @end
 

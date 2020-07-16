@@ -7,8 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GeneralMsg+CoreDataClass.h"
 
 NS_ASSUME_NONNULL_BEGIN
+
+typedef void (^CoreDataManagerSaveCompletionHandler)(BOOL contextDidSave, NSError * __nullable error);
 
 @interface CoreDataManager : NSObject
 
@@ -17,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setupCoreDataStack;
 - (void)cleanUp;
 
+- (void)updateGeneralMsgsWithMetadataArray:(NSArray *)metadataArray accountId:(NSString *)accountId completed:(CoreDataManagerSaveCompletionHandler)completedBlock;
+- (NSArray<GeneralMsg *> *)generalMsgsWithAccountId:(NSString *)accountId;
 
 @end
 

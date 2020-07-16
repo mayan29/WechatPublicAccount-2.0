@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4F31AF50DCE35107C3DFA410 /* libPods-WechatPublicAccount 2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 143DCCC59FEBBA2802C30275 /* libPods-WechatPublicAccount 2.0.a */; };
+		BC248E9424C036B500CA7B70 /* GeneralMsgListManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BC248E9324C036B500CA7B70 /* GeneralMsgListManager.m */; };
+		BC248E9724C0449F00CA7B70 /* GeneralMsgListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC248E9624C0449F00CA7B70 /* GeneralMsgListCell.m */; };
+		BC248E9A24C04F6D00CA7B70 /* GeneralMsgListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC248E9924C04F6D00CA7B70 /* GeneralMsgListHeaderView.m */; };
 		BC68C6CD24BFDCA9008927CD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC68C6CC24BFDCA9008927CD /* AppDelegate.m */; };
 		BC68C6D624BFDCA9008927CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC68C6D424BFDCA9008927CD /* Main.storyboard */; };
 		BC68C6D824BFDCAD008927CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC68C6D724BFDCAD008927CD /* Assets.xcassets */; };
@@ -18,7 +21,6 @@
 		BC68C6F324BFE1C1008927CD /* AccountListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC68C6EF24BFE1C1008927CD /* AccountListCell.m */; };
 		BC68C6F424BFE1C1008927CD /* AccountListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC68C6F024BFE1C1008927CD /* AccountListViewController.m */; };
 		BC68C6FD24BFE3A1008927CD /* GeneralMsgListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC68C6FB24BFE3A1008927CD /* GeneralMsgListViewController.m */; };
-		BC68C70024BFE860008927CD /* GeneralMsgListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC68C6FF24BFE860008927CD /* GeneralMsgListViewCell.m */; };
 		BC68C70724C0002E008927CD /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BC68C70624C0002E008927CD /* CoreDataManager.m */; };
 		BC68C70A24C000DB008927CD /* WechatPublicAccount.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC68C70824C000DB008927CD /* WechatPublicAccount.xcdatamodeld */; };
 		BC68C70D24C028C7008927CD /* wow36kr in Resources */ = {isa = PBXBuildFile; fileRef = BC68C70B24C028C7008927CD /* wow36kr */; };
@@ -27,6 +29,12 @@
 
 /* Begin PBXFileReference section */
 		143DCCC59FEBBA2802C30275 /* libPods-WechatPublicAccount 2.0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WechatPublicAccount 2.0.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC248E9224C036B500CA7B70 /* GeneralMsgListManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneralMsgListManager.h; sourceTree = "<group>"; };
+		BC248E9324C036B500CA7B70 /* GeneralMsgListManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneralMsgListManager.m; sourceTree = "<group>"; };
+		BC248E9524C0449F00CA7B70 /* GeneralMsgListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneralMsgListCell.h; sourceTree = "<group>"; };
+		BC248E9624C0449F00CA7B70 /* GeneralMsgListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneralMsgListCell.m; sourceTree = "<group>"; };
+		BC248E9824C04F6D00CA7B70 /* GeneralMsgListHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneralMsgListHeaderView.h; sourceTree = "<group>"; };
+		BC248E9924C04F6D00CA7B70 /* GeneralMsgListHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneralMsgListHeaderView.m; sourceTree = "<group>"; };
 		BC68C6C824BFDCA9008927CD /* WechatPublicAccount 2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WechatPublicAccount 2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC68C6CB24BFDCA9008927CD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BC68C6CC24BFDCA9008927CD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -45,8 +53,6 @@
 		BC68C6F924BFE36C008927CD /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		BC68C6FB24BFE3A1008927CD /* GeneralMsgListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralMsgListViewController.m; sourceTree = "<group>"; };
 		BC68C6FC24BFE3A1008927CD /* GeneralMsgListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralMsgListViewController.h; sourceTree = "<group>"; };
-		BC68C6FE24BFE860008927CD /* GeneralMsgListViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneralMsgListViewCell.h; sourceTree = "<group>"; };
-		BC68C6FF24BFE860008927CD /* GeneralMsgListViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneralMsgListViewCell.m; sourceTree = "<group>"; };
 		BC68C70524C0002E008927CD /* CoreDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
 		BC68C70624C0002E008927CD /* CoreDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
 		BC68C70924C000DB008927CD /* WechatPublicAccount.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WechatPublicAccount.xcdatamodel; sourceTree = "<group>"; };
@@ -140,10 +146,14 @@
 		BC68C6FA24BFE3A1008927CD /* GeneralMsgListViewController */ = {
 			isa = PBXGroup;
 			children = (
-				BC68C6FE24BFE860008927CD /* GeneralMsgListViewCell.h */,
-				BC68C6FF24BFE860008927CD /* GeneralMsgListViewCell.m */,
+				BC248E9824C04F6D00CA7B70 /* GeneralMsgListHeaderView.h */,
+				BC248E9924C04F6D00CA7B70 /* GeneralMsgListHeaderView.m */,
+				BC248E9524C0449F00CA7B70 /* GeneralMsgListCell.h */,
+				BC248E9624C0449F00CA7B70 /* GeneralMsgListCell.m */,
 				BC68C6FC24BFE3A1008927CD /* GeneralMsgListViewController.h */,
 				BC68C6FB24BFE3A1008927CD /* GeneralMsgListViewController.m */,
+				BC248E9224C036B500CA7B70 /* GeneralMsgListManager.h */,
+				BC248E9324C036B500CA7B70 /* GeneralMsgListManager.m */,
 			);
 			path = GeneralMsgListViewController;
 			sourceTree = "<group>";
@@ -198,6 +208,7 @@
 				TargetAttributes = {
 					BC68C6C724BFDCA9008927CD = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 				};
 			};
@@ -265,12 +276,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC248E9A24C04F6D00CA7B70 /* GeneralMsgListHeaderView.m in Sources */,
+				BC248E9424C036B500CA7B70 /* GeneralMsgListManager.m in Sources */,
 				BC68C70A24C000DB008927CD /* WechatPublicAccount.xcdatamodeld in Sources */,
 				BC68C6F224BFE1C1008927CD /* Account.m in Sources */,
 				BC68C6FD24BFE3A1008927CD /* GeneralMsgListViewController.m in Sources */,
 				BC68C70724C0002E008927CD /* CoreDataManager.m in Sources */,
+				BC248E9724C0449F00CA7B70 /* GeneralMsgListCell.m in Sources */,
 				BC68C6F324BFE1C1008927CD /* AccountListCell.m in Sources */,
-				BC68C70024BFE860008927CD /* GeneralMsgListViewCell.m in Sources */,
 				BC68C6CD24BFDCA9008927CD /* AppDelegate.m in Sources */,
 				BC68C6F424BFE1C1008927CD /* AccountListViewController.m in Sources */,
 				BC68C6DE24BFDCAD008927CD /* main.m in Sources */,
@@ -414,6 +427,7 @@
 			baseConfigurationReference = BF1B4EF4DC7F32697187A6D4 /* Pods-WechatPublicAccount 2.0.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AULC75KMVC;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -426,6 +440,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mayan.WechatPublicAccount-2-0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -435,6 +451,7 @@
 			baseConfigurationReference = EA689E6AF827DD99ACC54537 /* Pods-WechatPublicAccount 2.0.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AULC75KMVC;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -447,6 +464,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mayan.WechatPublicAccount-2-0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
