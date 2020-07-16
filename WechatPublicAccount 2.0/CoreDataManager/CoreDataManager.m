@@ -8,6 +8,7 @@
 //
 
 #import "CoreDataManager.h"
+#import <MagicalRecord/MagicalRecord.h>
 
 @implementation CoreDataManager
 
@@ -21,5 +22,17 @@
     });
     return instance;
 }
+
+- (void)setupCoreDataStack {
+    [MagicalRecord setupCoreDataStackWithStoreNamed:@"WechatPublicAccount"];
+    [MagicalRecord setLoggingLevel:MagicalRecordLoggingLevelWarn];
+    
+    NSLog(@"%@", NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject);
+}
+
+- (void)cleanUp {
+    [MagicalRecord cleanUp];
+}
+
 
 @end

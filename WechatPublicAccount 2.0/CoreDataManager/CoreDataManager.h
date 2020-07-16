@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)shareInstance;
 
+- (void)setupCoreDataStack;
+- (void)cleanUp;
+
 
 @end
 

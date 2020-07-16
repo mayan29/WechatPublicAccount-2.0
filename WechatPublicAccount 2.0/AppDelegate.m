@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "CoreDataManager.h"
 
 @interface AppDelegate ()
 
@@ -14,10 +15,14 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [[CoreDataManager shareInstance] setupCoreDataStack];
     return YES;
+}
+
+- (void)applicationWillTerminate:(UIApplication *)application {
+    [[CoreDataManager shareInstance] cleanUp];
 }
 
 
