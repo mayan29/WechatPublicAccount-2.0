@@ -1,0 +1,34 @@
+PODS:
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - MJExtension (3.1.0)
+  - SDWebImage (5.1.0):
+    - SDWebImage/Core (= 5.1.0)
+  - SDWebImage/Core (5.1.0)
+  - YYCategories (1.0.4):
+    - YYCategories/no-arc (= 1.0.4)
+  - YYCategories/no-arc (1.0.4)
+
+DEPENDENCIES:
+  - FMDB
+  - MJExtension
+  - SDWebImage (~> 5.0)
+  - YYCategories
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - FMDB
+    - MJExtension
+    - SDWebImage
+    - YYCategories
+
+SPEC CHECKSUMS:
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  MJExtension: 6b69b3bef2864fd550ce1a184eda219e321209d2
+  SDWebImage: fb387001955223213dde14bc08c8b73f371f8d8f
+  YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
+
+PODFILE CHECKSUM: e11d7f5c59b23d107dcfa3c2ff906a7e7a334c26
+
+COCOAPODS: 1.9.3
