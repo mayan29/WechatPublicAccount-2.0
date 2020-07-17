@@ -72,12 +72,24 @@
     
     NSMutableString *string = [NSMutableString string];
     for (AppMsg *appMsg in generalMsg.app_msg_list) {
-        if (appMsg.title) [string appendFormat:@"title: %@\n", appMsg.title];
-        if (appMsg.digest) [string appendFormat:@"digest: %@\n", appMsg.digest];
-        if (appMsg.author) [string appendFormat:@"author: %@\n", appMsg.author];
-        if (appMsg.cover) [string appendFormat:@"cover: %@\n", appMsg.cover];
-        if (appMsg.content_url) [string appendFormat:@"content_url: %@\n", appMsg.content_url];
+        if (appMsg.title.length) [string appendFormat:@"【标题】%@\n", appMsg.title];
+        if (appMsg.digest.length) [string appendFormat:@"【副标题】%@\n", appMsg.digest];
+        if (appMsg.author.length) [string appendFormat:@"【作者】%@\n", appMsg.author];
+        if (appMsg.cover.length) [string appendFormat:@"【图片】%@\n", appMsg.cover];
+        if (appMsg.content_url.length) [string appendFormat:@"【地址】%@\n", [appMsg.content_url stringByReplacingOccurrencesOfString:@"amp;" withString:@""]];
         [string appendFormat:@"\n\n\n"];
+    }
+    
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    pasteboard.string = string;
+}
+
+- (void)copyUrlWithIndexPath:(NSIndexPath *)indexPath {
+    GeneralMsg *generalMsg = self.generalMsgArray[indexPath.section];
+    
+    NSMutableString *string = [NSMutableString string];
+    for (AppMsg *appMsg in generalMsg.app_msg_list) {
+        [string appendFormat:@"%@\n\n\n", appMsg.content_url];
     }
     
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
@@ -126,6 +138,9 @@
     UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     [alertVC addAction:[UIAlertAction actionWithTitle:@"复制" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [self copyGeneraMsgWithIndexPath:indexPath];
+    }]];
+    [alertVC addAction:[UIAlertAction actionWithTitle:@"复制原地址" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self copyUrlWithIndexPath:indexPath];
     }]];
     [alertVC addAction:[UIAlertAction actionWithTitle:@"删除" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [self deleteGeneraMsgWithIndexPath:indexPath];

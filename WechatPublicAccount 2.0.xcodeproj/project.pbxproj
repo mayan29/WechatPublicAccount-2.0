@@ -11,6 +11,8 @@
 		BC248E9424C036B500CA7B70 /* GeneralMsgListManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BC248E9324C036B500CA7B70 /* GeneralMsgListManager.m */; };
 		BC248E9724C0449F00CA7B70 /* GeneralMsgListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC248E9624C0449F00CA7B70 /* GeneralMsgListCell.m */; };
 		BC248E9A24C04F6D00CA7B70 /* GeneralMsgListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC248E9924C04F6D00CA7B70 /* GeneralMsgListHeaderView.m */; };
+		BC61F34F24C137F4001DA971 /* ali_tech in Resources */ = {isa = PBXBuildFile; fileRef = BC61F34D24C137F4001DA971 /* ali_tech */; };
+		BC61F35024C137F4001DA971 /* wow36kr in Resources */ = {isa = PBXBuildFile; fileRef = BC61F34E24C137F4001DA971 /* wow36kr */; };
 		BC68C6CD24BFDCA9008927CD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC68C6CC24BFDCA9008927CD /* AppDelegate.m */; };
 		BC68C6D624BFDCA9008927CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC68C6D424BFDCA9008927CD /* Main.storyboard */; };
 		BC68C6D824BFDCAD008927CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC68C6D724BFDCAD008927CD /* Assets.xcassets */; };
@@ -23,8 +25,6 @@
 		BC68C6FD24BFE3A1008927CD /* GeneralMsgListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC68C6FB24BFE3A1008927CD /* GeneralMsgListViewController.m */; };
 		BC68C70724C0002E008927CD /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BC68C70624C0002E008927CD /* CoreDataManager.m */; };
 		BC68C70A24C000DB008927CD /* WechatPublicAccount.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BC68C70824C000DB008927CD /* WechatPublicAccount.xcdatamodeld */; };
-		BC68C70D24C028C7008927CD /* wow36kr in Resources */ = {isa = PBXBuildFile; fileRef = BC68C70B24C028C7008927CD /* wow36kr */; };
-		BC68C70E24C028C7008927CD /* ali_tech in Resources */ = {isa = PBXBuildFile; fileRef = BC68C70C24C028C7008927CD /* ali_tech */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +35,8 @@
 		BC248E9624C0449F00CA7B70 /* GeneralMsgListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneralMsgListCell.m; sourceTree = "<group>"; };
 		BC248E9824C04F6D00CA7B70 /* GeneralMsgListHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneralMsgListHeaderView.h; sourceTree = "<group>"; };
 		BC248E9924C04F6D00CA7B70 /* GeneralMsgListHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneralMsgListHeaderView.m; sourceTree = "<group>"; };
+		BC61F34D24C137F4001DA971 /* ali_tech */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ali_tech; sourceTree = "<group>"; };
+		BC61F34E24C137F4001DA971 /* wow36kr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = wow36kr; sourceTree = "<group>"; };
 		BC68C6C824BFDCA9008927CD /* WechatPublicAccount 2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WechatPublicAccount 2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC68C6CB24BFDCA9008927CD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BC68C6CC24BFDCA9008927CD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -56,8 +58,6 @@
 		BC68C70524C0002E008927CD /* CoreDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
 		BC68C70624C0002E008927CD /* CoreDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
 		BC68C70924C000DB008927CD /* WechatPublicAccount.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WechatPublicAccount.xcdatamodel; sourceTree = "<group>"; };
-		BC68C70B24C028C7008927CD /* wow36kr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = wow36kr; sourceTree = "<group>"; };
-		BC68C70C24C028C7008927CD /* ali_tech */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ali_tech; sourceTree = "<group>"; };
 		BF1B4EF4DC7F32697187A6D4 /* Pods-WechatPublicAccount 2.0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WechatPublicAccount 2.0.debug.xcconfig"; path = "Target Support Files/Pods-WechatPublicAccount 2.0/Pods-WechatPublicAccount 2.0.debug.xcconfig"; sourceTree = "<group>"; };
 		EA689E6AF827DD99ACC54537 /* Pods-WechatPublicAccount 2.0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WechatPublicAccount 2.0.release.xcconfig"; path = "Target Support Files/Pods-WechatPublicAccount 2.0/Pods-WechatPublicAccount 2.0.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,8 +123,8 @@
 		BC68C6E424BFE0FD008927CD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BC68C70C24C028C7008927CD /* ali_tech */,
-				BC68C70B24C028C7008927CD /* wow36kr */,
+				BC61F34D24C137F4001DA971 /* ali_tech */,
+				BC61F34E24C137F4001DA971 /* wow36kr */,
 				BC68C6E724BFE0FD008927CD /* AccountList.plist */,
 			);
 			path = Resources;
@@ -235,12 +235,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC61F35024C137F4001DA971 /* wow36kr in Resources */,
 				BC68C6DB24BFDCAD008927CD /* LaunchScreen.storyboard in Resources */,
-				BC68C70D24C028C7008927CD /* wow36kr in Resources */,
+				BC61F34F24C137F4001DA971 /* ali_tech in Resources */,
 				BC68C6EA24BFE0FD008927CD /* AccountList.plist in Resources */,
 				BC68C6D824BFDCAD008927CD /* Assets.xcassets in Resources */,
 				BC68C6D624BFDCA9008927CD /* Main.storyboard in Resources */,
-				BC68C70E24C028C7008927CD /* ali_tech in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

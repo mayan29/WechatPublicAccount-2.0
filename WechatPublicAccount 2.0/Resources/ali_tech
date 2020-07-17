@@ -15694,7 +15694,7 @@ Shake the world!</string>
 		<key>msglist</key>
 		<array>
 			<dict>
-				<key>content_url</key>
+				<key>cover</key>
 				<string>http://mmbiz.qpic.cn/mmbiz_jpg/Z6bicxIx5naKIMoehv9rbnNp2WhyvNZFCcVM633oP17f1La80yHUmNF1NDy2BtkFJI3bkalYNX9kLydbnmGghCw/0?wx_fmt=jpeg</string>
 				<key>title</key>
 				<string>图片</string>
@@ -16781,7 +16781,7 @@ Shake the world!</string>
 		<key>msglist</key>
 		<array>
 			<dict>
-				<key>content_url</key>
+				<key>cover</key>
 				<string>http://mmbiz.qpic.cn/mmbiz_jpg/Z6bicxIx5naLdaAR1w25iaC1ZJyLtoIiapMKonM7G9pojR9BQxpiaXugFncbLbfN0D5vftgFsUkNeftCiakQp7ibpsIA/0?wx_fmt=jpeg</string>
 				<key>title</key>
 				<string>图片</string>
