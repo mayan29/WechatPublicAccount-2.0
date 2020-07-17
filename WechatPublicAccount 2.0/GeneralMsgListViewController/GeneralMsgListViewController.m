@@ -71,14 +71,14 @@
     GeneralMsg *generalMsg = self.generalMsgArray[indexPath.section];
     
     NSMutableString *string = [NSMutableString string];
-    for (AppMsg *appMsg in generalMsg.app_msg_list) {
-        if (appMsg.title.length) [string appendFormat:@"【标题】%@\n", appMsg.title];
-        if (appMsg.digest.length) [string appendFormat:@"【副标题】%@\n", appMsg.digest];
-        if (appMsg.author.length) [string appendFormat:@"【作者】%@\n", appMsg.author];
-        if (appMsg.cover.length) [string appendFormat:@"【图片】%@\n", appMsg.cover];
+    [generalMsg.app_msg_list.allObjects enumerateObjectsUsingBlock:^(AppMsg * _Nonnull appMsg, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (appMsg.title.length) [string appendFormat:@"【标题】%@\n\n", appMsg.title];
+        if (appMsg.digest.length) [string appendFormat:@"【副标题】%@\n\n", appMsg.digest];
+        if (appMsg.author.length) [string appendFormat:@"【作者】%@\n\n", appMsg.author];
+        if (appMsg.cover.length) [string appendFormat:@"【图片】%@\n\n", appMsg.cover];
         if (appMsg.content_url.length) [string appendFormat:@"【地址】%@\n", [appMsg.content_url stringByReplacingOccurrencesOfString:@"amp;" withString:@""]];
-        [string appendFormat:@"\n\n\n"];
-    }
+        if (idx < generalMsg.app_msg_list.count - 1) [string appendFormat:@"\n\n\n"];
+    }];
     
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
     pasteboard.string = string;
@@ -88,9 +88,19 @@
     GeneralMsg *generalMsg = self.generalMsgArray[indexPath.section];
     
     NSMutableString *string = [NSMutableString string];
-    for (AppMsg *appMsg in generalMsg.app_msg_list) {
-        [string appendFormat:@"%@\n\n\n", appMsg.content_url];
-    }
+    [generalMsg.app_msg_list.allObjects enumerateObjectsUsingBlock:^(AppMsg * _Nonnull appMsg, NSUInteger idx, BOOL * _Nonnull stop) {
+        [string appendFormat:@"%@\n", appMsg.content_url];
+        if (idx < generalMsg.app_msg_list.count - 1) [string appendFormat:@"\n\n\n"];
+    }];
+    
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    pasteboard.string = string;
+}
+
+- (void)copyInfoWithIndexPath:(NSIndexPath *)indexPath {
+    NSMutableString *string = [NSMutableString string];
+    [string appendFormat:@"%@\n", self.title];
+    [string appendFormat:@"当前剩余文章组：%ld", self.generalMsgArray.count];
     
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
     pasteboard.string = string;
@@ -141,6 +151,9 @@
     }]];
     [alertVC addAction:[UIAlertAction actionWithTitle:@"复制原地址" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [self copyUrlWithIndexPath:indexPath];
+    }]];
+    [alertVC addAction:[UIAlertAction actionWithTitle:@"复制信息" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self copyInfoWithIndexPath:indexPath];
     }]];
     [alertVC addAction:[UIAlertAction actionWithTitle:@"删除" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [self deleteGeneraMsgWithIndexPath:indexPath];

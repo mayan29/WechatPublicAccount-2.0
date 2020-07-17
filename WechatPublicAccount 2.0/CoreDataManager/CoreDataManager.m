@@ -42,10 +42,11 @@
 - (void)updateGeneralMsgsWithMetadataArray:(NSArray *)metadataArray accountId:(NSString *)accountId completed:(CoreDataManagerSaveCompletionHandler)completedBlock {
     [[NSManagedObjectContext MR_defaultContext] MR_saveWithBlock:^(NSManagedObjectContext * _Nonnull localContext) {
         for (NSDictionary *metadata in metadataArray) {
-            if (![GeneralMsg MR_findFirstByAttribute:@"id" withValue:metadata[@"id"]]) {
-                
+            NSString *id = [NSString stringWithFormat:@"%@_%@", accountId, metadata[@"id"]];
+            
+            if (![GeneralMsg MR_findFirstByAttribute:@"id" withValue:id]) {
                 GeneralMsg *generalMsg = [GeneralMsg MR_createEntityInContext:localContext];
-                generalMsg.id       = [NSString stringWithFormat:@"%@", metadata[@"id"]];
+                generalMsg.id       = id;
                 generalMsg.datetime = [NSString stringWithFormat:@"%@", metadata[@"datetime"]];
                 generalMsg.wx_id    = accountId;
                 
