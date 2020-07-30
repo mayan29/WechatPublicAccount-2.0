@@ -100,23 +100,18 @@
 - (void)copyInfoWithIndexPath:(NSIndexPath *)indexPath {
     NSMutableString *string = [NSMutableString string];
     [string appendFormat:@"%@\n", self.title];
-    [string appendFormat:@"当前剩余文章组：%ld", self.generalMsgArray.count];
+    [string appendFormat:@"当前剩余文章组：%lu", (unsigned long)self.generalMsgArray.count];
     
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
     pasteboard.string = string;
 }
 
 - (void)deleteGeneraMsgWithIndexPath:(NSIndexPath *)indexPath {
-    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:nil message:@"是否删除？" preferredStyle:UIAlertControllerStyleAlert];
-    [alertVC addAction:[UIAlertAction actionWithTitle:@"否" style:UIAlertActionStyleCancel handler:nil]];
-    [alertVC addAction:[UIAlertAction actionWithTitle:@"是" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        GeneralMsg *generalMsg = self.generalMsgArray[indexPath.section];
-        [[GeneralMsgListManager shareInstance] deleteGeneralMsg:generalMsg completed:^{
-            [self.generalMsgArray removeObject:generalMsg];
-            [self.tableView deleteSection:indexPath.section withRowAnimation:UITableViewRowAnimationAutomatic];
-        }];
-    }]];
-    [self presentViewController:alertVC animated:YES completion:nil];
+    GeneralMsg *generalMsg = self.generalMsgArray[indexPath.section];
+    [[GeneralMsgListManager shareInstance] deleteGeneralMsg:generalMsg completed:^{
+        [self.generalMsgArray removeObject:generalMsg];
+        [self.tableView deleteSection:indexPath.section withRowAnimation:UITableViewRowAnimationAutomatic];
+    }];
 }
 
 
