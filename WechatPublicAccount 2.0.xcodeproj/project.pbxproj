@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		4F31AF50DCE35107C3DFA410 /* libPods-WechatPublicAccount 2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 143DCCC59FEBBA2802C30275 /* libPods-WechatPublicAccount 2.0.a */; };
+		BC113A5F24EE7AFE00691130 /* wow36kr in Resources */ = {isa = PBXBuildFile; fileRef = BC113A5E24EE7AFD00691130 /* wow36kr */; };
 		BC248E9424C036B500CA7B70 /* GeneralMsgListManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BC248E9324C036B500CA7B70 /* GeneralMsgListManager.m */; };
 		BC248E9724C0449F00CA7B70 /* GeneralMsgListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC248E9624C0449F00CA7B70 /* GeneralMsgListCell.m */; };
 		BC248E9A24C04F6D00CA7B70 /* GeneralMsgListHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC248E9924C04F6D00CA7B70 /* GeneralMsgListHeaderView.m */; };
 		BC61F34F24C137F4001DA971 /* ali_tech in Resources */ = {isa = PBXBuildFile; fileRef = BC61F34D24C137F4001DA971 /* ali_tech */; };
-		BC61F35024C137F4001DA971 /* wow36kr in Resources */ = {isa = PBXBuildFile; fileRef = BC61F34E24C137F4001DA971 /* wow36kr */; };
 		BC68C6CD24BFDCA9008927CD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC68C6CC24BFDCA9008927CD /* AppDelegate.m */; };
 		BC68C6D624BFDCA9008927CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC68C6D424BFDCA9008927CD /* Main.storyboard */; };
 		BC68C6D824BFDCAD008927CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC68C6D724BFDCAD008927CD /* Assets.xcassets */; };
@@ -29,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		143DCCC59FEBBA2802C30275 /* libPods-WechatPublicAccount 2.0.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WechatPublicAccount 2.0.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC113A5E24EE7AFD00691130 /* wow36kr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = wow36kr; sourceTree = "<group>"; };
 		BC248E9224C036B500CA7B70 /* GeneralMsgListManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneralMsgListManager.h; sourceTree = "<group>"; };
 		BC248E9324C036B500CA7B70 /* GeneralMsgListManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneralMsgListManager.m; sourceTree = "<group>"; };
 		BC248E9524C0449F00CA7B70 /* GeneralMsgListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneralMsgListCell.h; sourceTree = "<group>"; };
@@ -36,7 +37,6 @@
 		BC248E9824C04F6D00CA7B70 /* GeneralMsgListHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneralMsgListHeaderView.h; sourceTree = "<group>"; };
 		BC248E9924C04F6D00CA7B70 /* GeneralMsgListHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneralMsgListHeaderView.m; sourceTree = "<group>"; };
 		BC61F34D24C137F4001DA971 /* ali_tech */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ali_tech; sourceTree = "<group>"; };
-		BC61F34E24C137F4001DA971 /* wow36kr */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = wow36kr; sourceTree = "<group>"; };
 		BC68C6C824BFDCA9008927CD /* WechatPublicAccount 2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WechatPublicAccount 2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC68C6CB24BFDCA9008927CD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BC68C6CC24BFDCA9008927CD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				BC61F34D24C137F4001DA971 /* ali_tech */,
-				BC61F34E24C137F4001DA971 /* wow36kr */,
+				BC113A5E24EE7AFD00691130 /* wow36kr */,
 				BC68C6E724BFE0FD008927CD /* AccountList.plist */,
 			);
 			path = Resources;
@@ -235,7 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC61F35024C137F4001DA971 /* wow36kr in Resources */,
+				BC113A5F24EE7AFE00691130 /* wow36kr in Resources */,
 				BC68C6DB24BFDCAD008927CD /* LaunchScreen.storyboard in Resources */,
 				BC61F34F24C137F4001DA971 /* ali_tech in Resources */,
 				BC68C6EA24BFE0FD008927CD /* AccountList.plist in Resources */,
