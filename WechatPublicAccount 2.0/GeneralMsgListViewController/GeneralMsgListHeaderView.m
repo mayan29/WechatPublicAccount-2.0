@@ -23,7 +23,6 @@
     GeneralMsgListHeaderView *view = [tableView dequeueReusableHeaderFooterViewWithIdentifier:id];
     if (!view) {
         view = [[GeneralMsgListHeaderView alloc] initWithReuseIdentifier:id];
-        view.contentView.backgroundColor = tableView.backgroundColor;
     }
     view.datetimeLabel.text = [[NSDate dateWithTimeIntervalSince1970:datetime.floatValue] stringWithFormat:@"YYYY年MM月dd日 hh:mm"];
     return view;
@@ -52,7 +51,7 @@
         _datetimeLabel.font = [UIFont systemFontOfSize:14];
         _datetimeLabel.textAlignment = NSTextAlignmentCenter;
         _datetimeLabel.textColor = [UIColor colorWithRed:168/255.0 green:168/255.0 blue:168/255.0 alpha:1];
-        _datetimeLabel.backgroundColor = self.contentView.backgroundColor;
+        _datetimeLabel.backgroundColor = UIColor.whiteColor;
     }
     return _datetimeLabel;
 }
