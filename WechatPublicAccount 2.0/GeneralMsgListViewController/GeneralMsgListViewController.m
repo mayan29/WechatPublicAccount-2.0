@@ -103,10 +103,9 @@
 
 - (void)deleteGeneraMsgWithIndexPath:(NSIndexPath *)indexPath {
     GeneralMsg *generalMsg = self.generalMsgArray[indexPath.section];
-    [[GeneralMsgListManager shareInstance] deleteGeneralMsg:generalMsg completed:^{
-        [self.generalMsgArray removeObject:generalMsg];
-        [self.tableView deleteSection:indexPath.section withRowAnimation:UITableViewRowAnimationAutomatic];
-    }];
+    [self.generalMsgArray removeObjectAtIndex:indexPath.section];
+    [self.tableView deleteSection:indexPath.section withRowAnimation:UITableViewRowAnimationAutomatic];
+    [[GeneralMsgListManager shareInstance] deleteGeneralMsg:generalMsg completed:^{}];
 }
 
 
